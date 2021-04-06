@@ -80,15 +80,15 @@ enum CompanyEndPoint: EndPointType {
                 "startDate": coupon.startDate,
                 "title": coupon.title
             ]
-            return .requestParametest(bodyParameters: params, urlParanatars: nil)
+            return .requestParametersAnyHeaders(bodyParameters: params, urlParanatars: nil, additionalHeaders: headers)
         case .deleteCoupon:
-            return .request
+            return .requestParametersAnyHeaders(bodyParameters: nil, urlParanatars: nil, additionalHeaders: headers)
         case .getCoupons:
-            return .request
+            return .requestParametersAnyHeaders(bodyParameters: nil, urlParanatars: nil, additionalHeaders: headers)
         case .getCouponsPriceLessThen:
-            return .request
+            return .requestParametersAnyHeaders(bodyParameters: nil, urlParanatars: nil, additionalHeaders: headers)
         case .getCompany:
-            return .request
+            return .requestParametersAnyHeaders(bodyParameters: nil, urlParanatars: nil, additionalHeaders: headers)
         }
     }
     

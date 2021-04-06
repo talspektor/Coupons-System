@@ -60,7 +60,7 @@ enum CustomerEndPoint: EndPointType {
     }
     
     var task: HTTPTask {
-        return .request
+        return .requestParametersAnyHeaders(bodyParameters: nil, urlParanatars: nil, additionalHeaders: headers)
     }
     
     var headers: HTTPHeaders? {
