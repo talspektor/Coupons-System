@@ -7,14 +7,86 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		363ED6B2261C857300E93588 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363ED6B1261C857300E93588 /* APIConstants.swift */; };
 		368DCDDE261B057400229381 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCDDD261B057400229381 /* AppDelegate.swift */; };
 		368DCDE0261B057400229381 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCDDF261B057400229381 /* SceneDelegate.swift */; };
 		368DCDE2261B057400229381 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCDE1261B057400229381 /* ContentView.swift */; };
-		368DCDE4261B057600229381 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 368DCDE3261B057600229381 /* Assets.xcassets */; };
 		368DCDE7261B057600229381 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 368DCDE6261B057600229381 /* Preview Assets.xcassets */; };
 		368DCDEA261B057600229381 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 368DCDE8261B057600229381 /* LaunchScreen.storyboard */; };
 		368DCDF5261B057600229381 /* Coupons_SystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCDF4261B057600229381 /* Coupons_SystemTests.swift */; };
 		368DCE00261B057600229381 /* Coupons_SystemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCDFF261B057600229381 /* Coupons_SystemUITests.swift */; };
+		368DCE1E261B059F00229381 /* ResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE0F261B059F00229381 /* ResponseHandler.swift */; };
+		368DCE1F261B059F00229381 /* NetworkResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE10261B059F00229381 /* NetworkResponseHandler.swift */; };
+		368DCE20261B059F00229381 /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE12261B059F00229381 /* ParameterEncoder.swift */; };
+		368DCE21261B059F00229381 /* JSONEncoder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE13261B059F00229381 /* JSONEncoder+Extension.swift */; };
+		368DCE22261B059F00229381 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE14261B059F00229381 /* URLParameterEncoder.swift */; };
+		368DCE23261B059F00229381 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE15261B059F00229381 /* JSONParameterEncoder.swift */; };
+		368DCE24261B059F00229381 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE16261B059F00229381 /* NetworkError.swift */; };
+		368DCE25261B059F00229381 /* JSONDecoder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE18261B059F00229381 /* JSONDecoder+Extension.swift */; };
+		368DCE26261B059F00229381 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE1A261B059F00229381 /* EndPoint.swift */; };
+		368DCE27261B059F00229381 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE1C261B059F00229381 /* NetworkRouter.swift */; };
+		368DCE28261B059F00229381 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE1D261B059F00229381 /* Router.swift */; };
+		368DCE45261B05BB00229381 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE2B261B05BB00229381 /* Repository.swift */; };
+		368DCE46261B05BB00229381 /* APIResponseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE2D261B05BB00229381 /* APIResponseItem.swift */; };
+		368DCE47261B05BB00229381 /* APIResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE2E261B05BB00229381 /* APIResponseHandler.swift */; };
+		368DCE48261B05BB00229381 /* APIResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE2F261B05BB00229381 /* APIResponseError.swift */; };
+		368DCE49261B05BB00229381 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE31261B05BB00229381 /* Date+Extension.swift */; };
+		368DCE4A261B05BB00229381 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE32261B05BB00229381 /* String+Extension.swift */; };
+		368DCE4B261B05BB00229381 /* CompanyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE34261B05BB00229381 /* CompanyClient.swift */; };
+		368DCE4C261B05BB00229381 /* AdminClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE35261B05BB00229381 /* AdminClient.swift */; };
+		368DCE4D261B05BB00229381 /* CustomerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE36261B05BB00229381 /* CustomerClient.swift */; };
+		368DCE4E261B05BB00229381 /* AdminServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE39261B05BB00229381 /* AdminServiceImp.swift */; };
+		368DCE4F261B05BB00229381 /* CompanyServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE3A261B05BB00229381 /* CompanyServiceImp.swift */; };
+		368DCE50261B05BB00229381 /* CustomerServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE3B261B05BB00229381 /* CustomerServiceImp.swift */; };
+		368DCE51261B05BB00229381 /* CompanyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE3D261B05BB00229381 /* CompanyService.swift */; };
+		368DCE52261B05BB00229381 /* CustomerServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE3E261B05BB00229381 /* CustomerServise.swift */; };
+		368DCE53261B05BB00229381 /* AdminService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE3F261B05BB00229381 /* AdminService.swift */; };
+		368DCE55261B05BB00229381 /* CustomerEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE42261B05BB00229381 /* CustomerEndPoint.swift */; };
+		368DCE56261B05BB00229381 /* CompanyEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE43261B05BB00229381 /* CompanyEndPoint.swift */; };
+		368DCE57261B05BB00229381 /* AdminEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE44261B05BB00229381 /* AdminEndPoint.swift */; };
+		368DCE5C261B05C600229381 /* CouponsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE5A261B05C600229381 /* CouponsApp.swift */; };
+		368DCE5F261B05D400229381 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE5E261B05D400229381 /* MockData.swift */; };
+		368DCE66261B05DB00229381 /* CouponsByCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE61261B05DB00229381 /* CouponsByCategory.swift */; };
+		368DCE67261B05DB00229381 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE62261B05DB00229381 /* Coupon.swift */; };
+		368DCE68261B05DB00229381 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE63261B05DB00229381 /* Customer.swift */; };
+		368DCE69261B05DB00229381 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE64261B05DB00229381 /* Category.swift */; };
+		368DCE6A261B05DB00229381 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE65261B05DB00229381 /* Company.swift */; };
+		368DCE6E261B05EC00229381 /* AdminObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE6C261B05EC00229381 /* AdminObservableObject.swift */; };
+		368DCE6F261B05EC00229381 /* OrderCouopon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE6D261B05EC00229381 /* OrderCouopon.swift */; };
+		368DCE72261B05FE00229381 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 368DCE71261B05FE00229381 /* Assets.xcassets */; };
+		368DCE9C261B060700229381 /* AdminHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE76261B060700229381 /* AdminHomeViewModel.swift */; };
+		368DCE9D261B060700229381 /* AdminHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE77261B060700229381 /* AdminHomeView.swift */; };
+		368DCE9E261B060700229381 /* CustomerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE79261B060700229381 /* CustomerDetailsView.swift */; };
+		368DCE9F261B060700229381 /* CustomersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE7B261B060700229381 /* CustomersListView.swift */; };
+		368DCEA0261B060700229381 /* CustomerItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE7C261B060700229381 /* CustomerItemView.swift */; };
+		368DCEA1261B060700229381 /* CompanyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE7E261B060700229381 /* CompanyItemView.swift */; };
+		368DCEA2261B060700229381 /* CompanyDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE7F261B060700229381 /* CompanyDetailsView.swift */; };
+		368DCEA3261B060700229381 /* CompaniesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE80261B060700229381 /* CompaniesListView.swift */; };
+		368DCEA4261B060700229381 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE81261B060700229381 /* HomeView.swift */; };
+		368DCEA5261B060700229381 /* CustomerHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE83261B060700229381 /* CustomerHomeView.swift */; };
+		368DCEA6261B060700229381 /* CustomerHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE84261B060700229381 /* CustomerHomeViewModel.swift */; };
+		368DCEA7261B060700229381 /* AddCouponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE87261B060700229381 /* AddCouponView.swift */; };
+		368DCEA8261B060700229381 /* AddCouponViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE88261B060700229381 /* AddCouponViewModel.swift */; };
+		368DCEA9261B060700229381 /* ComapnyHameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE8A261B060700229381 /* ComapnyHameView.swift */; };
+		368DCEAA261B060700229381 /* CompanyHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE8B261B060700229381 /* CompanyHomeViewModel.swift */; };
+		368DCEAB261B060700229381 /* AddButon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE8D261B060700229381 /* AddButon.swift */; };
+		368DCEAC261B060700229381 /* BaseAddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE8E261B060700229381 /* BaseAddItemView.swift */; };
+		368DCEAD261B060700229381 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE90261B060700229381 /* Utils.swift */; };
+		368DCEAE261B060700229381 /* CouponsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE92261B060700229381 /* CouponsListView.swift */; };
+		368DCEAF261B060700229381 /* CouponItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE93261B060700229381 /* CouponItemView.swift */; };
+		368DCEB0261B060700229381 /* CouponDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE94261B060700229381 /* CouponDetail.swift */; };
+		368DCEB1261B060700229381 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE96261B060700229381 /* CheckoutView.swift */; };
+		368DCEB2261B060700229381 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE97261B060700229381 /* OrderView.swift */; };
+		368DCEB3261B060700229381 /* ErrorFetchDataAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE99261B060700229381 /* ErrorFetchDataAlertView.swift */; };
+		368DCEB4261B060700229381 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCE9B261B060700229381 /* LoginView.swift */; };
+		368DCEB6261B069100229381 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCEB5261B069100229381 /* AppView.swift */; };
+		368DCEB8261B07EF00229381 /* FormatCouponsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCEB7261B07EF00229381 /* FormatCouponsTest.swift */; };
+		368DCEBD261B07F900229381 /* AdminServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCEBA261B07F900229381 /* AdminServicesTests.swift */; };
+		368DCEBE261B07F900229381 /* CompanyServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCEBB261B07F900229381 /* CompanyServiceTests.swift */; };
+		368DCEBF261B07F900229381 /* CustomerServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCEBC261B07F900229381 /* CustomerServiceTests.swift */; };
+		368DCEC1261B0A4200229381 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCEC0261B0A4200229381 /* LoginService.swift */; };
+		368DCEC3261B0B9F00229381 /* LoginEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCEC2261B0B9F00229381 /* LoginEndPoint.swift */; };
+		368DCEC5261B103100229381 /* LoginServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCEC4261B103100229381 /* LoginServiceTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,11 +107,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		363ED6B1261C857300E93588 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		368DCDDA261B057400229381 /* Coupons-System.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coupons-System.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		368DCDDD261B057400229381 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		368DCDDD261B057400229381 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Coupons-System/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		368DCDDF261B057400229381 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		368DCDE1261B057400229381 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		368DCDE3261B057600229381 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		368DCDE6261B057600229381 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		368DCDE9261B057600229381 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		368DCDEB261B057600229381 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +121,78 @@
 		368DCDFB261B057600229381 /* Coupons-SystemUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Coupons-SystemUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		368DCDFF261B057600229381 /* Coupons_SystemUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupons_SystemUITests.swift; sourceTree = "<group>"; };
 		368DCE01261B057600229381 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		368DCE0F261B059F00229381 /* ResponseHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseHandler.swift; sourceTree = "<group>"; };
+		368DCE10261B059F00229381 /* NetworkResponseHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseHandler.swift; sourceTree = "<group>"; };
+		368DCE12261B059F00229381 /* ParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoder.swift; sourceTree = "<group>"; };
+		368DCE13261B059F00229381 /* JSONEncoder+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSONEncoder+Extension.swift"; sourceTree = "<group>"; };
+		368DCE14261B059F00229381 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
+		368DCE15261B059F00229381 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		368DCE16261B059F00229381 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		368DCE18261B059F00229381 /* JSONDecoder+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Extension.swift"; sourceTree = "<group>"; };
+		368DCE1A261B059F00229381 /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		368DCE1C261B059F00229381 /* NetworkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		368DCE1D261B059F00229381 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		368DCE2B261B05BB00229381 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		368DCE2D261B05BB00229381 /* APIResponseItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponseItem.swift; sourceTree = "<group>"; };
+		368DCE2E261B05BB00229381 /* APIResponseHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponseHandler.swift; sourceTree = "<group>"; };
+		368DCE2F261B05BB00229381 /* APIResponseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponseError.swift; sourceTree = "<group>"; };
+		368DCE31261B05BB00229381 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		368DCE32261B05BB00229381 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		368DCE34261B05BB00229381 /* CompanyClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyClient.swift; sourceTree = "<group>"; };
+		368DCE35261B05BB00229381 /* AdminClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminClient.swift; sourceTree = "<group>"; };
+		368DCE36261B05BB00229381 /* CustomerClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerClient.swift; sourceTree = "<group>"; };
+		368DCE39261B05BB00229381 /* AdminServiceImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminServiceImp.swift; sourceTree = "<group>"; };
+		368DCE3A261B05BB00229381 /* CompanyServiceImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyServiceImp.swift; sourceTree = "<group>"; };
+		368DCE3B261B05BB00229381 /* CustomerServiceImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerServiceImp.swift; sourceTree = "<group>"; };
+		368DCE3D261B05BB00229381 /* CompanyService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyService.swift; sourceTree = "<group>"; };
+		368DCE3E261B05BB00229381 /* CustomerServise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerServise.swift; sourceTree = "<group>"; };
+		368DCE3F261B05BB00229381 /* AdminService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminService.swift; sourceTree = "<group>"; };
+		368DCE42261B05BB00229381 /* CustomerEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerEndPoint.swift; sourceTree = "<group>"; };
+		368DCE43261B05BB00229381 /* CompanyEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyEndPoint.swift; sourceTree = "<group>"; };
+		368DCE44261B05BB00229381 /* AdminEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminEndPoint.swift; sourceTree = "<group>"; };
+		368DCE5A261B05C600229381 /* CouponsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponsApp.swift; sourceTree = "<group>"; };
+		368DCE5E261B05D400229381 /* MockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		368DCE61261B05DB00229381 /* CouponsByCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponsByCategory.swift; sourceTree = "<group>"; };
+		368DCE62261B05DB00229381 /* Coupon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
+		368DCE63261B05DB00229381 /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		368DCE64261B05DB00229381 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		368DCE65261B05DB00229381 /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		368DCE6C261B05EC00229381 /* AdminObservableObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminObservableObject.swift; sourceTree = "<group>"; };
+		368DCE6D261B05EC00229381 /* OrderCouopon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCouopon.swift; sourceTree = "<group>"; };
+		368DCE71261B05FE00229381 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		368DCE76261B060700229381 /* AdminHomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminHomeViewModel.swift; sourceTree = "<group>"; };
+		368DCE77261B060700229381 /* AdminHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminHomeView.swift; sourceTree = "<group>"; };
+		368DCE79261B060700229381 /* CustomerDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerDetailsView.swift; sourceTree = "<group>"; };
+		368DCE7B261B060700229381 /* CustomersListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomersListView.swift; sourceTree = "<group>"; };
+		368DCE7C261B060700229381 /* CustomerItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerItemView.swift; sourceTree = "<group>"; };
+		368DCE7E261B060700229381 /* CompanyItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyItemView.swift; sourceTree = "<group>"; };
+		368DCE7F261B060700229381 /* CompanyDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyDetailsView.swift; sourceTree = "<group>"; };
+		368DCE80261B060700229381 /* CompaniesListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompaniesListView.swift; sourceTree = "<group>"; };
+		368DCE81261B060700229381 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		368DCE83261B060700229381 /* CustomerHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerHomeView.swift; sourceTree = "<group>"; };
+		368DCE84261B060700229381 /* CustomerHomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerHomeViewModel.swift; sourceTree = "<group>"; };
+		368DCE87261B060700229381 /* AddCouponView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCouponView.swift; sourceTree = "<group>"; };
+		368DCE88261B060700229381 /* AddCouponViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCouponViewModel.swift; sourceTree = "<group>"; };
+		368DCE8A261B060700229381 /* ComapnyHameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComapnyHameView.swift; sourceTree = "<group>"; };
+		368DCE8B261B060700229381 /* CompanyHomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyHomeViewModel.swift; sourceTree = "<group>"; };
+		368DCE8D261B060700229381 /* AddButon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddButon.swift; sourceTree = "<group>"; };
+		368DCE8E261B060700229381 /* BaseAddItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAddItemView.swift; sourceTree = "<group>"; };
+		368DCE90261B060700229381 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		368DCE92261B060700229381 /* CouponsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponsListView.swift; sourceTree = "<group>"; };
+		368DCE93261B060700229381 /* CouponItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponItemView.swift; sourceTree = "<group>"; };
+		368DCE94261B060700229381 /* CouponDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponDetail.swift; sourceTree = "<group>"; };
+		368DCE96261B060700229381 /* CheckoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
+		368DCE97261B060700229381 /* OrderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
+		368DCE99261B060700229381 /* ErrorFetchDataAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorFetchDataAlertView.swift; sourceTree = "<group>"; };
+		368DCE9B261B060700229381 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		368DCEB5261B069100229381 /* AppView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		368DCEB7261B07EF00229381 /* FormatCouponsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatCouponsTest.swift; sourceTree = "<group>"; };
+		368DCEBA261B07F900229381 /* AdminServicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminServicesTests.swift; sourceTree = "<group>"; };
+		368DCEBB261B07F900229381 /* CompanyServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyServiceTests.swift; sourceTree = "<group>"; };
+		368DCEBC261B07F900229381 /* CustomerServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerServiceTests.swift; sourceTree = "<group>"; };
+		368DCEC0261B0A4200229381 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		368DCEC2261B0B9F00229381 /* LoginEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEndPoint.swift; sourceTree = "<group>"; };
+		368DCEC4261B103100229381 /* LoginServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +243,16 @@
 		368DCDDC261B057400229381 /* Coupons-System */ = {
 			isa = PBXGroup;
 			children = (
-				368DCDDD261B057400229381 /* AppDelegate.swift */,
-				368DCDDF261B057400229381 /* SceneDelegate.swift */,
+				368DCE0D261B059F00229381 /* Network */,
+				368DCE29261B05BB00229381 /* API */,
+				368DCE70261B05FE00229381 /* Resources */,
+				368DCE6B261B05EC00229381 /* ObservableObjects */,
+				368DCE60261B05DB00229381 /* Models */,
+				368DCE5D261B05D400229381 /* MockData */,
+				368DCE58261B05C600229381 /* App */,
+				368DCE73261B060700229381 /* View */,
 				368DCDE1261B057400229381 /* ContentView.swift */,
-				368DCDE3261B057600229381 /* Assets.xcassets */,
+				368DCEB5261B069100229381 /* AppView.swift */,
 				368DCDE8261B057600229381 /* LaunchScreen.storyboard */,
 				368DCDEB261B057600229381 /* Info.plist */,
 				368DCDE5261B057600229381 /* Preview Content */,
@@ -121,7 +271,9 @@
 		368DCDF3261B057600229381 /* Coupons-SystemTests */ = {
 			isa = PBXGroup;
 			children = (
+				368DCEB7261B07EF00229381 /* FormatCouponsTest.swift */,
 				368DCDF4261B057600229381 /* Coupons_SystemTests.swift */,
+				368DCEB9261B07F900229381 /* Services */,
 				368DCDF6261B057600229381 /* Info.plist */,
 			);
 			path = "Coupons-SystemTests";
@@ -134,6 +286,366 @@
 				368DCE01261B057600229381 /* Info.plist */,
 			);
 			path = "Coupons-SystemUITests";
+			sourceTree = "<group>";
+		};
+		368DCE0D261B059F00229381 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE0E261B059F00229381 /* Response */,
+				368DCE11261B059F00229381 /* Encoding */,
+				368DCE17261B059F00229381 /* Decoding */,
+				368DCE19261B059F00229381 /* EndPont */,
+				368DCE1B261B059F00229381 /* Service */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		368DCE0E261B059F00229381 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE0F261B059F00229381 /* ResponseHandler.swift */,
+				368DCE10261B059F00229381 /* NetworkResponseHandler.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		368DCE11261B059F00229381 /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE12261B059F00229381 /* ParameterEncoder.swift */,
+				368DCE13261B059F00229381 /* JSONEncoder+Extension.swift */,
+				368DCE14261B059F00229381 /* URLParameterEncoder.swift */,
+				368DCE15261B059F00229381 /* JSONParameterEncoder.swift */,
+				368DCE16261B059F00229381 /* NetworkError.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		368DCE17261B059F00229381 /* Decoding */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE18261B059F00229381 /* JSONDecoder+Extension.swift */,
+			);
+			path = Decoding;
+			sourceTree = "<group>";
+		};
+		368DCE19261B059F00229381 /* EndPont */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE1A261B059F00229381 /* EndPoint.swift */,
+			);
+			path = EndPont;
+			sourceTree = "<group>";
+		};
+		368DCE1B261B059F00229381 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE1C261B059F00229381 /* NetworkRouter.swift */,
+				368DCE1D261B059F00229381 /* Router.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		368DCE29261B05BB00229381 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE2A261B05BB00229381 /* Repository */,
+				368DCE2C261B05BB00229381 /* Response */,
+				368DCE30261B05BB00229381 /* DateFormat */,
+				368DCE33261B05BB00229381 /* Client */,
+				368DCE37261B05BB00229381 /* Services */,
+				368DCE41261B05BB00229381 /* EndPiont */,
+				363ED6B1261C857300E93588 /* APIConstants.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		368DCE2A261B05BB00229381 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE2B261B05BB00229381 /* Repository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		368DCE2C261B05BB00229381 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE2D261B05BB00229381 /* APIResponseItem.swift */,
+				368DCE2E261B05BB00229381 /* APIResponseHandler.swift */,
+				368DCE2F261B05BB00229381 /* APIResponseError.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		368DCE30261B05BB00229381 /* DateFormat */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE31261B05BB00229381 /* Date+Extension.swift */,
+				368DCE32261B05BB00229381 /* String+Extension.swift */,
+			);
+			path = DateFormat;
+			sourceTree = "<group>";
+		};
+		368DCE33261B05BB00229381 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE34261B05BB00229381 /* CompanyClient.swift */,
+				368DCE35261B05BB00229381 /* AdminClient.swift */,
+				368DCE36261B05BB00229381 /* CustomerClient.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		368DCE37261B05BB00229381 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE38261B05BB00229381 /* Implementations */,
+				368DCE3C261B05BB00229381 /* protocols */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		368DCE38261B05BB00229381 /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE39261B05BB00229381 /* AdminServiceImp.swift */,
+				368DCE3A261B05BB00229381 /* CompanyServiceImp.swift */,
+				368DCE3B261B05BB00229381 /* CustomerServiceImp.swift */,
+				368DCEC0261B0A4200229381 /* LoginService.swift */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		368DCE3C261B05BB00229381 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE3D261B05BB00229381 /* CompanyService.swift */,
+				368DCE3E261B05BB00229381 /* CustomerServise.swift */,
+				368DCE3F261B05BB00229381 /* AdminService.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		368DCE41261B05BB00229381 /* EndPiont */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE42261B05BB00229381 /* CustomerEndPoint.swift */,
+				368DCE43261B05BB00229381 /* CompanyEndPoint.swift */,
+				368DCE44261B05BB00229381 /* AdminEndPoint.swift */,
+				368DCEC2261B0B9F00229381 /* LoginEndPoint.swift */,
+			);
+			path = EndPiont;
+			sourceTree = "<group>";
+		};
+		368DCE58261B05C600229381 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				368DCDDD261B057400229381 /* AppDelegate.swift */,
+				368DCDDF261B057400229381 /* SceneDelegate.swift */,
+				368DCE5A261B05C600229381 /* CouponsApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		368DCE5D261B05D400229381 /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE5E261B05D400229381 /* MockData.swift */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
+		368DCE60261B05DB00229381 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE61261B05DB00229381 /* CouponsByCategory.swift */,
+				368DCE62261B05DB00229381 /* Coupon.swift */,
+				368DCE63261B05DB00229381 /* Customer.swift */,
+				368DCE64261B05DB00229381 /* Category.swift */,
+				368DCE65261B05DB00229381 /* Company.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		368DCE6B261B05EC00229381 /* ObservableObjects */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE6C261B05EC00229381 /* AdminObservableObject.swift */,
+				368DCE6D261B05EC00229381 /* OrderCouopon.swift */,
+			);
+			path = ObservableObjects;
+			sourceTree = "<group>";
+		};
+		368DCE70261B05FE00229381 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE71261B05FE00229381 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		368DCE73261B060700229381 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE74261B060700229381 /* Home */,
+				368DCE8C261B060700229381 /* General */,
+				368DCE8F261B060700229381 /* Utils */,
+				368DCE91261B060700229381 /* Coupon */,
+				368DCE95261B060700229381 /* CustomerViews */,
+				368DCE98261B060700229381 /* Error */,
+				368DCE9A261B060700229381 /* Login */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		368DCE74261B060700229381 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE75261B060700229381 /* Admin */,
+				368DCE81261B060700229381 /* HomeView.swift */,
+				368DCE82261B060700229381 /* Customer */,
+				368DCE85261B060700229381 /* Company */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		368DCE75261B060700229381 /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE76261B060700229381 /* AdminHomeViewModel.swift */,
+				368DCE77261B060700229381 /* AdminHomeView.swift */,
+				368DCE78261B060700229381 /* Customer */,
+				368DCE7D261B060700229381 /* Company */,
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
+		368DCE78261B060700229381 /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE79261B060700229381 /* CustomerDetailsView.swift */,
+				368DCE7A261B060700229381 /* CustomerList */,
+				368DCE7C261B060700229381 /* CustomerItemView.swift */,
+			);
+			path = Customer;
+			sourceTree = "<group>";
+		};
+		368DCE7A261B060700229381 /* CustomerList */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE7B261B060700229381 /* CustomersListView.swift */,
+			);
+			path = CustomerList;
+			sourceTree = "<group>";
+		};
+		368DCE7D261B060700229381 /* Company */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE7E261B060700229381 /* CompanyItemView.swift */,
+				368DCE7F261B060700229381 /* CompanyDetailsView.swift */,
+				368DCE80261B060700229381 /* CompaniesListView.swift */,
+			);
+			path = Company;
+			sourceTree = "<group>";
+		};
+		368DCE82261B060700229381 /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE83261B060700229381 /* CustomerHomeView.swift */,
+				368DCE84261B060700229381 /* CustomerHomeViewModel.swift */,
+			);
+			path = Customer;
+			sourceTree = "<group>";
+		};
+		368DCE85261B060700229381 /* Company */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE86261B060700229381 /* AddCoupon */,
+				368DCE89261B060700229381 /* CompanyHome */,
+			);
+			path = Company;
+			sourceTree = "<group>";
+		};
+		368DCE86261B060700229381 /* AddCoupon */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE87261B060700229381 /* AddCouponView.swift */,
+				368DCE88261B060700229381 /* AddCouponViewModel.swift */,
+			);
+			path = AddCoupon;
+			sourceTree = "<group>";
+		};
+		368DCE89261B060700229381 /* CompanyHome */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE8A261B060700229381 /* ComapnyHameView.swift */,
+				368DCE8B261B060700229381 /* CompanyHomeViewModel.swift */,
+			);
+			path = CompanyHome;
+			sourceTree = "<group>";
+		};
+		368DCE8C261B060700229381 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE8D261B060700229381 /* AddButon.swift */,
+				368DCE8E261B060700229381 /* BaseAddItemView.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		368DCE8F261B060700229381 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE90261B060700229381 /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		368DCE91261B060700229381 /* Coupon */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE92261B060700229381 /* CouponsListView.swift */,
+				368DCE93261B060700229381 /* CouponItemView.swift */,
+				368DCE94261B060700229381 /* CouponDetail.swift */,
+			);
+			path = Coupon;
+			sourceTree = "<group>";
+		};
+		368DCE95261B060700229381 /* CustomerViews */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE96261B060700229381 /* CheckoutView.swift */,
+				368DCE97261B060700229381 /* OrderView.swift */,
+			);
+			path = CustomerViews;
+			sourceTree = "<group>";
+		};
+		368DCE98261B060700229381 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE99261B060700229381 /* ErrorFetchDataAlertView.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		368DCE9A261B060700229381 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				368DCE9B261B060700229381 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		368DCEB9261B07F900229381 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				368DCEBA261B07F900229381 /* AdminServicesTests.swift */,
+				368DCEBB261B07F900229381 /* CompanyServiceTests.swift */,
+				368DCEBC261B07F900229381 /* CustomerServiceTests.swift */,
+				368DCEC4261B103100229381 /* LoginServiceTest.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,7 +754,7 @@
 			files = (
 				368DCDEA261B057600229381 /* LaunchScreen.storyboard in Resources */,
 				368DCDE7261B057600229381 /* Preview Assets.xcassets in Resources */,
-				368DCDE4261B057600229381 /* Assets.xcassets in Resources */,
+				368DCE72261B05FE00229381 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,9 +779,76 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				368DCE4E261B05BB00229381 /* AdminServiceImp.swift in Sources */,
+				368DCE67261B05DB00229381 /* Coupon.swift in Sources */,
+				368DCE22261B059F00229381 /* URLParameterEncoder.swift in Sources */,
+				368DCE66261B05DB00229381 /* CouponsByCategory.swift in Sources */,
+				368DCE50261B05BB00229381 /* CustomerServiceImp.swift in Sources */,
+				368DCE9C261B060700229381 /* AdminHomeViewModel.swift in Sources */,
+				368DCE20261B059F00229381 /* ParameterEncoder.swift in Sources */,
+				368DCEC1261B0A4200229381 /* LoginService.swift in Sources */,
+				368DCEB1261B060700229381 /* CheckoutView.swift in Sources */,
+				368DCE45261B05BB00229381 /* Repository.swift in Sources */,
+				368DCE6E261B05EC00229381 /* AdminObservableObject.swift in Sources */,
+				368DCEB4261B060700229381 /* LoginView.swift in Sources */,
+				368DCE21261B059F00229381 /* JSONEncoder+Extension.swift in Sources */,
 				368DCDDE261B057400229381 /* AppDelegate.swift in Sources */,
+				368DCE68261B05DB00229381 /* Customer.swift in Sources */,
+				368DCEC3261B0B9F00229381 /* LoginEndPoint.swift in Sources */,
+				368DCE1F261B059F00229381 /* NetworkResponseHandler.swift in Sources */,
+				368DCEA5261B060700229381 /* CustomerHomeView.swift in Sources */,
+				368DCEA2261B060700229381 /* CompanyDetailsView.swift in Sources */,
+				368DCE56261B05BB00229381 /* CompanyEndPoint.swift in Sources */,
+				368DCE4C261B05BB00229381 /* AdminClient.swift in Sources */,
+				368DCE5C261B05C600229381 /* CouponsApp.swift in Sources */,
+				368DCE48261B05BB00229381 /* APIResponseError.swift in Sources */,
+				368DCEAF261B060700229381 /* CouponItemView.swift in Sources */,
+				368DCE23261B059F00229381 /* JSONParameterEncoder.swift in Sources */,
+				368DCE5F261B05D400229381 /* MockData.swift in Sources */,
+				368DCE4B261B05BB00229381 /* CompanyClient.swift in Sources */,
+				368DCE6A261B05DB00229381 /* Company.swift in Sources */,
+				368DCE53261B05BB00229381 /* AdminService.swift in Sources */,
+				368DCEA3261B060700229381 /* CompaniesListView.swift in Sources */,
+				368DCE4A261B05BB00229381 /* String+Extension.swift in Sources */,
+				368DCE51261B05BB00229381 /* CompanyService.swift in Sources */,
+				368DCEA8261B060700229381 /* AddCouponViewModel.swift in Sources */,
+				368DCE9E261B060700229381 /* CustomerDetailsView.swift in Sources */,
+				368DCEAC261B060700229381 /* BaseAddItemView.swift in Sources */,
+				368DCEA6261B060700229381 /* CustomerHomeViewModel.swift in Sources */,
+				363ED6B2261C857300E93588 /* APIConstants.swift in Sources */,
+				368DCE26261B059F00229381 /* EndPoint.swift in Sources */,
+				368DCE6F261B05EC00229381 /* OrderCouopon.swift in Sources */,
+				368DCE46261B05BB00229381 /* APIResponseItem.swift in Sources */,
+				368DCEA0261B060700229381 /* CustomerItemView.swift in Sources */,
+				368DCEA1261B060700229381 /* CompanyItemView.swift in Sources */,
+				368DCE47261B05BB00229381 /* APIResponseHandler.swift in Sources */,
+				368DCE1E261B059F00229381 /* ResponseHandler.swift in Sources */,
+				368DCEA9261B060700229381 /* ComapnyHameView.swift in Sources */,
+				368DCE27261B059F00229381 /* NetworkRouter.swift in Sources */,
 				368DCDE0261B057400229381 /* SceneDelegate.swift in Sources */,
+				368DCE4D261B05BB00229381 /* CustomerClient.swift in Sources */,
+				368DCE55261B05BB00229381 /* CustomerEndPoint.swift in Sources */,
+				368DCEA7261B060700229381 /* AddCouponView.swift in Sources */,
+				368DCE28261B059F00229381 /* Router.swift in Sources */,
+				368DCE69261B05DB00229381 /* Category.swift in Sources */,
+				368DCEA4261B060700229381 /* HomeView.swift in Sources */,
+				368DCE4F261B05BB00229381 /* CompanyServiceImp.swift in Sources */,
+				368DCE9D261B060700229381 /* AdminHomeView.swift in Sources */,
+				368DCE25261B059F00229381 /* JSONDecoder+Extension.swift in Sources */,
+				368DCEB0261B060700229381 /* CouponDetail.swift in Sources */,
 				368DCDE2261B057400229381 /* ContentView.swift in Sources */,
+				368DCE49261B05BB00229381 /* Date+Extension.swift in Sources */,
+				368DCEB3261B060700229381 /* ErrorFetchDataAlertView.swift in Sources */,
+				368DCE9F261B060700229381 /* CustomersListView.swift in Sources */,
+				368DCE24261B059F00229381 /* NetworkError.swift in Sources */,
+				368DCEAD261B060700229381 /* Utils.swift in Sources */,
+				368DCEAE261B060700229381 /* CouponsListView.swift in Sources */,
+				368DCE57261B05BB00229381 /* AdminEndPoint.swift in Sources */,
+				368DCEAA261B060700229381 /* CompanyHomeViewModel.swift in Sources */,
+				368DCEB6261B069100229381 /* AppView.swift in Sources */,
+				368DCEB2261B060700229381 /* OrderView.swift in Sources */,
+				368DCE52261B05BB00229381 /* CustomerServise.swift in Sources */,
+				368DCEAB261B060700229381 /* AddButon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +856,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				368DCEBD261B07F900229381 /* AdminServicesTests.swift in Sources */,
+				368DCEB8261B07EF00229381 /* FormatCouponsTest.swift in Sources */,
 				368DCDF5261B057600229381 /* Coupons_SystemTests.swift in Sources */,
+				368DCEBF261B07F900229381 /* CustomerServiceTests.swift in Sources */,
+				368DCEBE261B07F900229381 /* CompanyServiceTests.swift in Sources */,
+				368DCEC5261B103100229381 /* LoginServiceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
