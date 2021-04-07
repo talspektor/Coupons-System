@@ -14,7 +14,7 @@ enum LoginService {
     static func login(type: UserType, email: String, password: String, completion: @escaping (Result<LoginResponseItem, Error>) -> Void) {
         client.request(.login(UserType.admin, email, password)) { responseItem in
             ResponseHandler.handleWithDecoding(LoginResponseItem.self, responseItem) { (result) in
-                completion(APIResponseHandler.handleResponse(result: result))
+                completion(result)
             }
         }
     }

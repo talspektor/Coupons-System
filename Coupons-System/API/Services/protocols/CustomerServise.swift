@@ -8,11 +8,11 @@
 import Foundation
 
 protocol CustomerService {
-    var client: CustomerClient { get }
-    func getAllCoupons(completion: @escaping (Result<[Coupon], Error>) -> Void)
-    func getCustomerCoupons(completion: @escaping (Result<[Coupon], Error>) -> Void)
-    func purchaseCoupon(id: Int, completion: @escaping (Result<Coupon, Error>) -> Void)
-    func getCoupons(categoty: Category, completion: @escaping (Result<[Coupon], Error>) -> Void)
-    func getCoupons(maxPrice: Double, completion: @escaping (Result<[Coupon], Error>) -> Void)
-    func getCustomer(completion: @escaping (Result<Customer, Error>) -> Void)
+    static var client: CustomerClient { get }
+    static func getAllCoupons(completion: @escaping (Result<[Coupon], Error>) -> Void)
+    static func getCustomerCoupons(completion: @escaping (Result<[Coupon], Error>) -> Void)
+    static func purchaseCoupon(id: Int, completion: @escaping (Result<Coupon, Error>) -> Void)
+    static func getCoupons(categoty: Category, completion: @escaping (Result<[Coupon], Error>) -> Void)
+    static func getCoupons(maxPrice: Double, completion: @escaping (Result<[Coupon], Error>) -> Void)
+    static func getCustomer(completion: @escaping (Result<Customer, Error>) -> Void)
 }

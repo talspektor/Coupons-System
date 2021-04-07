@@ -14,9 +14,7 @@ extension ComapnyHameView {
         @Published private(set) var categoryCoupons: [CategoryCoupons]?
         @Published private(set) var shouldShowAlert = false
         
-        private var coupons: [Coupon] = []
-        private let service = CompanyServiceImp.shared
-        
+        private var coupons: [Coupon] = []        
         var useMockData = false
         
         func dismissAlert() {
@@ -27,7 +25,7 @@ extension ComapnyHameView {
             if useMockData {
                 company = randomCompany
             } else {
-//                service.getCompany { [weak self] (result) in
+//                CompanyServiceImp.getCompany { [weak self] (result) in
 //                    DispatchQueue.main.async {
 //                        switch result {
 //                        case .success(let company):
@@ -46,7 +44,7 @@ extension ComapnyHameView {
             if useMockData {
                 categoryCoupons = mockSections
             } else {
-//                service.getCoupons { [weak self] (result) in
+//                CompanyServiceImp.getCoupons { [weak self] (result) in
 //                    DispatchQueue.main.async {
 //                        switch result {
 //                        case .success(let coupons):
@@ -63,7 +61,7 @@ extension ComapnyHameView {
             if useMockData {
                 
             } else {
-//                service.addCoupon(coupon: coupon) { [weak self] (result) in
+//                CompanyServiceImp.addCoupon(coupon: coupon) { [weak self] (result) in
 //                    DispatchQueue.main.async {
 //                        switch result {
 //                        case .success:

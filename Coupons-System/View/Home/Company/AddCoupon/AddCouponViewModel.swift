@@ -12,9 +12,7 @@ extension AddCouponView {
         @Published var coupon: Coupon = Coupon(id: 1, company: randomCompany, categoryId: Category.ELECTRICITY.rawValue, title: "", description: "", startDate: Date().format(to: .serverDate), endDate: Date().format(to: .serverDate), amount: 0, price: 0, imageUrl: "")
         @Published private(set) var sholdDismiss: Bool = false
         @Published private(set) var shouldShowAlert = false
-        
-        private var service = CompanyServiceImp.shared
-        
+                
         var startDate: Date = Date() {
             didSet {
                 coupon.startDate = startDate.format(to: .serverDate)
@@ -55,7 +53,7 @@ extension AddCouponView {
             if !coupon.title.isEmpty && !coupon.description.isEmpty && !amount.isEmpty && !price.isEmpty {
                 DispatchQueue.main.async { [weak self] in
                     guard let coupon = self?.coupon else { return }
-//                    self?.service.addCoupon(coupon: coupon) { (result) in
+//                    self?.CompanyServiceImp.addCoupon(coupon: coupon) { (result) in
 //                        switch result {
 //                        case .success:
 //                            self?.sholdDismiss = true

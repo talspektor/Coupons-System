@@ -14,14 +14,12 @@ extension AdminHomeView {
         @Published private(set) var customers: [Customer]?
         @Published private(set) var shouldShowAlert = false
         var useMockData = false
-        
-        private let service = AdminServiceImp.shared
-        
+                
         func getComapnies() {
             if useMockData {
                 companies = [randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany, randomCompany]
             } else {
-//                service.getCompanies { [weak self] (result) in
+//                AdminServiceImp.getCompanies { [weak self] (result) in
 //                    DispatchQueue.main.async {
 //                        switch result {
 //                        case .success(let companies):

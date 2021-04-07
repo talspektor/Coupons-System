@@ -9,5 +9,9 @@
 import Foundation
 
 struct LoginResponseItem: Decodable {
-    let token: String
+    var token: String {
+        didSet {
+            APIConstants.token = token
+        }
+    }
 }

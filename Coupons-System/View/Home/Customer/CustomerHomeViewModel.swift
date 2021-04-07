@@ -16,14 +16,12 @@ extension CustomerHomeView {
         @Published private(set) var shouldShowAlert = false
         
         var useMockData: Bool = false
-
-        private let service = CustomerServiceImp.shared
         
         func getCustomerCoupons() {
             if useMockData {
                 userCategoryCoupons = mockSections
             } else {
-//                service.getCustomerCoupons { [weak self] (result) in
+//                CustomerServiceImp.getCustomerCoupons { [weak self] (result) in
 //                    DispatchQueue.main.async {
 //                        switch result {
 //                        case .success(let coupons):
