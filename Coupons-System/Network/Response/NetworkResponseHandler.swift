@@ -58,5 +58,5 @@ struct NetworkResponseHandler {
 }
 
 enum HTTPError: Error {
-    case httpError(String)
+    case httpError(ResponseErrorModel)
 }

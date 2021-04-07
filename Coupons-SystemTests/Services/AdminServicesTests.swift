@@ -77,7 +77,7 @@ class AdminServicesTests: XCTestCase {
 
     func testGetCompanyByName() {
         let expectation = XCTestExpectation()
-        AdminServiceImp.shared.getCompany(name: "company_2") { (result) in
+        AdminServiceImp.shared.getCompany(name: "string") { (result) in
             switch result {
             case .success:
                 assert(true, "Get Company by name")
@@ -92,7 +92,7 @@ class AdminServicesTests: XCTestCase {
 
     func testGetCustomerById() {
         let expectation = XCTestExpectation()
-        AdminServiceImp.shared.getCustomer(id: 14) { (result) in
+        AdminServiceImp.shared.getCustomer(id: 1) { (result) in
             switch result {
             case .success:
                 assert(true, "Get Customer")
@@ -139,7 +139,7 @@ class AdminServicesTests: XCTestCase {
 
     func testUpdateCustomer() {
         let expectation = XCTestExpectation()
-        let customer = Customer(id: 18, firstName: "test_iosU2", lastName: "test_iosU2", email: "test_iosU2", password: "test_iosU2")
+        let customer = Customer(id: 1, firstName: "test_ios1", lastName: "test_ios1", email: "test_ios1", password: "test_ios1")
         AdminServiceImp.shared.updateCustomer(customer: customer) { (result) in
             switch result {
             case .success:
@@ -155,7 +155,7 @@ class AdminServicesTests: XCTestCase {
 
     func testUpdateComany() {
         let expectation = XCTestExpectation()
-        let company = Company(id: 31, name: "test_ios11", email: "test_ios11", password: "test_ios1")
+        let company = Company(id: 2, name: "test_ios9", email: "test_ios8", password: "test_ios8")
         AdminServiceImp.shared.updateCompany(company: company) { (result) in
             switch result {
             case .success:
@@ -171,7 +171,7 @@ class AdminServicesTests: XCTestCase {
 
     func testDeleteComapny() {
         let expectation = XCTestExpectation()
-        AdminServiceImp.shared.deleteCompany(id: 36) { (result) in
+        AdminServiceImp.shared.deleteCompany(id: 2) { (result) in
             switch result {
             case .success:
                 assert(true, "delete company")
@@ -186,7 +186,7 @@ class AdminServicesTests: XCTestCase {
 
     func testDeleteCustomer() {
         let expectation = XCTestExpectation()
-        AdminServiceImp.shared.deleteCustomer(id: 22) { (result) in
+        AdminServiceImp.shared.deleteCustomer(id: 1) { (result) in
             switch result {
             case .success:
                 assert(true, "delete company")

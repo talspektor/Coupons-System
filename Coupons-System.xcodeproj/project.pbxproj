@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		363ED6B2261C857300E93588 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363ED6B1261C857300E93588 /* APIConstants.swift */; };
+		36437AC7261D71CD002294AB /* ResponseErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36437AC6261D71CD002294AB /* ResponseErrorModel.swift */; };
+		36437AC9261D7770002294AB /* LoginResponseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36437AC8261D7770002294AB /* LoginResponseItem.swift */; };
 		368DCDDE261B057400229381 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCDDD261B057400229381 /* AppDelegate.swift */; };
 		368DCDE0261B057400229381 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCDDF261B057400229381 /* SceneDelegate.swift */; };
 		368DCDE2261B057400229381 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCDE1261B057400229381 /* ContentView.swift */; };
@@ -108,6 +110,8 @@
 
 /* Begin PBXFileReference section */
 		363ED6B1261C857300E93588 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		36437AC6261D71CD002294AB /* ResponseErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseErrorModel.swift; sourceTree = "<group>"; };
+		36437AC8261D7770002294AB /* LoginResponseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseItem.swift; sourceTree = "<group>"; };
 		368DCDDA261B057400229381 /* Coupons-System.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coupons-System.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		368DCDDD261B057400229381 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Coupons-System/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		368DCDDF261B057400229381 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -305,6 +309,7 @@
 			children = (
 				368DCE0F261B059F00229381 /* ResponseHandler.swift */,
 				368DCE10261B059F00229381 /* NetworkResponseHandler.swift */,
+				36437AC6261D71CD002294AB /* ResponseErrorModel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 				368DCE2D261B05BB00229381 /* APIResponseItem.swift */,
 				368DCE2E261B05BB00229381 /* APIResponseHandler.swift */,
 				368DCE2F261B05BB00229381 /* APIResponseError.swift */,
+				36437AC8261D7770002294AB /* LoginResponseItem.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -796,6 +802,7 @@
 				368DCE68261B05DB00229381 /* Customer.swift in Sources */,
 				368DCEC3261B0B9F00229381 /* LoginEndPoint.swift in Sources */,
 				368DCE1F261B059F00229381 /* NetworkResponseHandler.swift in Sources */,
+				36437AC9261D7770002294AB /* LoginResponseItem.swift in Sources */,
 				368DCEA5261B060700229381 /* CustomerHomeView.swift in Sources */,
 				368DCEA2261B060700229381 /* CompanyDetailsView.swift in Sources */,
 				368DCE56261B05BB00229381 /* CompanyEndPoint.swift in Sources */,
@@ -844,6 +851,7 @@
 				368DCEAD261B060700229381 /* Utils.swift in Sources */,
 				368DCEAE261B060700229381 /* CouponsListView.swift in Sources */,
 				368DCE57261B05BB00229381 /* AdminEndPoint.swift in Sources */,
+				36437AC7261D71CD002294AB /* ResponseErrorModel.swift in Sources */,
 				368DCEAA261B060700229381 /* CompanyHomeViewModel.swift in Sources */,
 				368DCEB6261B069100229381 /* AppView.swift in Sources */,
 				368DCEB2261B060700229381 /* OrderView.swift in Sources */,

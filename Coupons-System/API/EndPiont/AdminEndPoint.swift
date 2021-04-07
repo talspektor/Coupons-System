@@ -102,21 +102,21 @@ enum AdminEndPoint: EndPointType {
                 "email": customer.email,
                 "password": customer.password
             ]
-            return .requestParametest(bodyParameters: params, urlParanatars: nil)
+            return .requestParametersAnyHeaders(bodyParameters: params, urlParanatars: nil, additionalHeaders: headers)
         case .deleteCompany:
-            return .request
+            return .requestParametersAnyHeaders(bodyParameters: nil, urlParanatars: nil, additionalHeaders: headers)
         case .deleteCustomer:
-            return .request
+            return .requestParametersAnyHeaders(bodyParameters: nil, urlParanatars: nil, additionalHeaders: headers)
         case .getCompanies:
             return .requestParametersAnyHeaders(bodyParameters: nil, urlParanatars: nil, additionalHeaders: headers)
         case .getCustomers:
             return .requestParametersAnyHeaders(bodyParameters: nil, urlParanatars: nil, additionalHeaders: headers)
         case .getCompany:
-            return .request
+            return .requestParametersAnyHeaders(bodyParameters: nil, urlParanatars: nil, additionalHeaders: headers)
         case .getCustomer:
-            return .request
+            return .requestParametersAnyHeaders(bodyParameters: nil, urlParanatars: nil, additionalHeaders: headers)
         case .getCompanyByName:
-            return .request
+            return .requestParametersAnyHeaders(bodyParameters: nil, urlParanatars: nil, additionalHeaders: headers)
         case .updateCompany(let company):
             let params: Parameters = [
                 "id": company.id,
@@ -124,7 +124,7 @@ enum AdminEndPoint: EndPointType {
                 "email": company.email,
                 "password": company.password
             ]
-            return .requestParametest(bodyParameters: params, urlParanatars: nil)
+            return .requestParametersAnyHeaders(bodyParameters: params, urlParanatars: nil, additionalHeaders: headers)
         case .updateCustomer(let customer):
             let params: Parameters = [
                 "id": customer.id,
@@ -133,7 +133,7 @@ enum AdminEndPoint: EndPointType {
                 "email": customer.email,
                 "password": customer.password
             ]
-             return .requestParametest(bodyParameters: params, urlParanatars: nil)
+             return .requestParametersAnyHeaders(bodyParameters: params, urlParanatars: nil, additionalHeaders: headers)
         }
         
     }

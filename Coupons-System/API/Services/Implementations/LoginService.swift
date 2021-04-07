@@ -11,9 +11,9 @@ import Foundation
 enum LoginService {
     static var client: Router<LoginEndPoint> { Router<LoginEndPoint>() }
     
-    static func login(type: UserType, email: String, password: String, completion: @escaping (Result<String, Error>) -> Void) {
+    static func login(type: UserType, email: String, password: String, completion: @escaping (Result<LoginResponseItem, Error>) -> Void) {
         client.request(.login(UserType.admin, email, password)) { responseItem in
-            ResponseHandler.handleWithDecoding(String.self, responseItem) { (result) in
+            ResponseHandler.handleWithDecoding(LoginResponseItem.self, responseItem) { (result) in
                 completion(APIResponseHandler.handleResponse(result: result))
             }
         }

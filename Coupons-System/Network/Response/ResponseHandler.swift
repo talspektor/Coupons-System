@@ -55,7 +55,7 @@ struct ResponseHandler {
             }
         case .failure(let error):
             do {
-                let apiResponse = try JSONDecoder().decode(with: String.self, from: responseData)
+                let apiResponse = try JSONDecoder().decode(with: ResponseErrorModel.self, from: responseData)
                 debugPrint("\n<<<<< Response JSON: \(apiResponse) \(error)\n")
                 completion(.failure(HTTPError.httpError(apiResponse)))
             } catch {

@@ -9,5 +9,5 @@
 import Foundation
 
 enum APIConstants {
-    static var token: String = "aae5ff853ab8ac68d"
+    static var token: String = "7918a2a2f7bfe7d16"
 }
