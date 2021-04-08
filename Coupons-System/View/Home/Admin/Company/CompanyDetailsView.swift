@@ -13,7 +13,7 @@ struct CompanyDetailsView: View {
     var body: some View {
         VStack {
             Text("Name: \(company.name)")
-            Text("Email: \(company.email)")
+            Text("Email: \(company.email ?? "")")
         }
     }
 }

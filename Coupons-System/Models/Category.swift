@@ -13,19 +13,6 @@ enum Category: String, Codable, Hashable, Equatable {
     case SPORTS
     case ELECTRICITY
 
-//    var description: String {
-//        switch self {
-//        case .FOOD:
-//            return "FOOD"
-//        case .VACATION:
-//            return "VACATION"
-//        case .SPORTS:
-//            return "SPORTS"
-//        case .ELECTRICITY:
-//            return "ELECTRICITY"
-//        }
-//    }
-
     static func == (lhs: Category, rhs: Category) -> Bool {
         return lhs.rawValue == rhs.rawValue
     }

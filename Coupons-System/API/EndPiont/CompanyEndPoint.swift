@@ -65,7 +65,7 @@ enum CompanyEndPoint: EndPointType {
         case .addCoupon(let coupon), .updateCoupon(let coupon):
             let params: Parameters = [
                 "amount": coupon.amount,
-                "category": coupon.categoryId,
+                "category": coupon.category,
                 "compny": [
                     "email": "",
                     "id": 0,

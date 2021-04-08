@@ -12,8 +12,14 @@ enum LoginService {
     static var client: Router<LoginEndPoint> { Router<LoginEndPoint>() }
     
     static func login(type: UserType, email: String, password: String, completion: @escaping (Result<LoginResponseItem, Error>) -> Void) {
-        client.request(.login(UserType.admin, email, password)) { responseItem in
+        client.request(.login(type, email, password)) { responseItem in
             ResponseHandler.handleWithDecoding(LoginResponseItem.self, responseItem) { (result) in
+                switch result {
+                case .success(let response):
+                    APIConstants.token = response.token
+                case .failure:
+                    break
+                }
                 completion(result)
             }
         }

@@ -13,15 +13,16 @@ class CustomerServiceTests: XCTestCase {
     override func setUp() {
         super.setUp()
         let login = LoginServiceTest()
-        login.testAdminLogin()
+        login.testCustomerLogin()
     }
     
     func testGetAllCoupons() {
         let expectation = XCTestExpectation()
         CustomerServiceImp.getAllCoupons { (result) in
             switch result {
-            case .success:
+            case .success(let coupons):
                 assert(true, "Get all coupons")
+                coupons.forEach { debugPrint($0) }
                 expectation.fulfill()
             case .failure(let error):
                 assert(false, "Get all coupns fail: \(error)")
@@ -48,7 +49,7 @@ class CustomerServiceTests: XCTestCase {
 
     func testPurchaseCoupon() {
         let expectation = XCTestExpectation()
-        CustomerServiceImp.purchaseCoupon(id: 27) { (result) in
+        CustomerServiceImp.purchaseCoupon(id: 7) { (result) in
             switch result {
             case .success:
                 assert(true, "purchase coupon")
@@ -63,7 +64,7 @@ class CustomerServiceTests: XCTestCase {
     
     func testGetCouponsByCategory() {
         let expectation = XCTestExpectation()
-        CustomerServiceImp.getCoupons(categoty: .FOOD) { (result) in
+        CustomerServiceImp.getCoupons(categoty: .SPORTS) { (result) in
             switch result {
             case .success:
                 assert(true, "get couponsByCategory")

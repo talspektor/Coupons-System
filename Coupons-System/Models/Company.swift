@@ -13,8 +13,8 @@ struct Company: Codable, Identifiable, Equatable {
     }
     let id: Int64
     let name: String
-    let email: String
-    let password: String
+    let email: String?
+    let password: String?
 }
 
 #if DEBUG

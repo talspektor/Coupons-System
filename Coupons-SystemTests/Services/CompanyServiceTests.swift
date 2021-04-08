@@ -13,13 +13,13 @@ class CompanyServiceTests: XCTestCase {
     override func setUp() {
         super.setUp()
         let login = LoginServiceTest()
-        login.testAdminLogin()
+        login.testCompanyLogin()
     }
     
     func testAddCoupon() {
         let expectation = XCTestExpectation()
         let company = Company(id: 0, name: "", email: "", password: "")
-        let coupon = Coupon(id: 0, company: company, categoryId: Category.SPORTS.rawValue, title: "ios1", description: "ios", startDate: Date().format(to: .serverDate), endDate: (Date() + (10 * 60 * 60 * 24)).format(to: .serverDate), amount: 5, price: 10, imageUrl: "")
+        let coupon = Coupon(id: 0, company: company, category: Category.SPORTS.rawValue, title: "ios7", description: "ios7", startDate: Date().format(to: .serverDate), endDate: (Date() + (10 * 60 * 60 * 24)).format(to: .serverDate), amount: 5, price: 10, imageUrl: "")
         CompanyServiceImp.addCoupon(coupon: coupon) { (result) in
             switch result {
             case .success:
@@ -36,7 +36,7 @@ class CompanyServiceTests: XCTestCase {
     func testUpdateCoupon() {
         let expectation = XCTestExpectation()
         let company = Company(id: 1, name: "", email: "", password: "")
-        let coupon = Coupon(id: 30, company: company, categoryId: Category.SPORTS.rawValue, title: "ios4", description: "iosUp_1", startDate: Date().format(to: .serverDate), endDate: (Date() + (10 * 60 * 60 * 24)).format(to: .serverDate), amount: 5, price: 10, imageUrl: "")
+        let coupon = Coupon(id: 4, company: company, category: Category.SPORTS.rawValue, title: "ios4", description: "iosUp_1", startDate: Date().format(to: .serverDate), endDate: (Date() + (10 * 60 * 60 * 24)).format(to: .serverDate), amount: 5, price: 10, imageUrl: "")
         CompanyServiceImp.updateCoupon(coupon: coupon) { (result) in
             switch result {
             case .success:
@@ -49,10 +49,10 @@ class CompanyServiceTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 10.0)
     }
-    //test success 30.1.21
+    
     func testDeleteCoupon() {
         let expectation = XCTestExpectation()
-        CompanyServiceImp.deleteCoupon(id: 33) { (result) in
+        CompanyServiceImp.deleteCoupon(id: 4) { (result) in
             switch result {
             case .success:
                 assert(true, "deleteCoupon")
