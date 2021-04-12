@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import Combine
+
 struct NetworkResponseItem {
     let data: Data?
     let response: URLResponse?
@@ -14,6 +16,6 @@ struct NetworkResponseItem {
 typealias NetworkRouterCompletion = (_ responseItem: NetworkResponseItem) -> Void
 protocol NetworkRouter: class {
     associatedtype EndPoint: EndPointType
-    func request(_ route: EndPoint, completion: @escaping NetworkRouterCompletion)
+    func request<T: Decodable>(_ route: EndPoint, type: T.Type) throws -> URLSession.DataTaskPublisher
     func cansel()
 }

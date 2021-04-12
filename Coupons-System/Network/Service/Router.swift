@@ -6,40 +6,84 @@
 //
 
 import Foundation
+import Combine
+
+//extension Publisher {
+//    func asFuture() -> Future<Output, Failure> {
+//        return Future { promise in
+//            var ticket: AnyCancellable? = nil
+//            ticket = self.sink(
+//                receiveCompletion: {
+//                    ticket?.cancel()
+//                    ticket = nil
+//                    switch $0 {
+//                    case .failure(let error):
+//                        promise(.failure(error))
+//                    case .finished:
+//                        promise(.success(Output($0)))
+//                    }
+//            },
+//                receiveValue: {
+//                    ticket?.cancel()
+//                    ticket = nil
+//                    promise(.success($0))
+//            })
+//        }
+//    }
+//}
+
+struct Response<T> { // 1
+    let value: T
+    let response: URLResponse
+}
 
 class Router<EndPoint: EndPointType>: NetworkRouter {
-    private var task: URLSessionTask?
-    func request(_ route: EndPoint, completion: @escaping NetworkRouterCompletion) {
-        let session = URLSession.shared
-        do {
-            let request = try self.buildRequest(from: route)
-            task = session.dataTask(with: request, completionHandler: { data, response, error in
-                print("========================")
-                if let httpResponse = response as? HTTPURLResponse {
-                    print(">>>>> HTTP STATUS: \(httpResponse.statusCode)")
 
-                }
-                print(">>>>> URL: \(String(describing: response?.url))")
-                print(">>>>> Data: \(String(describing: data))")
-                print(">>>>> REQUEST BODY \(String(describing: request.httpBody))")
-                print(">>>>> REQUEST Method \(String(describing: request.httpMethod))")
-                print(">>>>> REQUEST HEADERS \(String(describing: request.allHTTPHeaderFields))")
-                print(">>>>> Error: \(String(describing: error))")
-                print("========================")
-                completion(NetworkResponseItem(data: data, response: response, error: error))
-            })
-        } catch {
-            print(">>>>> Error: \(String(describing: error))")
-            completion(NetworkResponseItem(data: nil, response: nil, error: error))
+    private var task: URLSessionTask?
+    private var cancelables = Set<AnyCancellable>()
+    
+    func request<T: Decodable>(_ route: EndPoint, type: T.Type) throws -> URLSession.DataTaskPublisher {
+//        do {
+            let request = self.buildRequest(from: route)
+        switch request {
+        case .success(let urlRequest):
+            return URLSession.DataTaskPublisher(request: urlRequest, session: .shared)
+        case .failure(let error):
+            throw error
         }
-        self.task?.resume()
+//            return URLSession.DataTaskPublisher(request: request, session: .shared)
+//                .map({ (data, response) -> (Data, URLResponse) in
+//                    print(">>>>> URL: \(String(describing: response.url))")
+//                    print(">>>>> REQUEST BODY \(String(describing: request.httpBody))")
+//                    print(">>>>> REQUEST Method \(String(describing: request.httpMethod))")
+//                    print(">>>>> REQUEST HEADERS \(String(describing: request.allHTTPHeaderFields))")
+//                    let networkResponseItem = NetworkResponseItem(data: data, response: response, error: nil)
+//                    let result = ResponseHandler.handleWithDecoding(T.self, networkResponseItem)
+//                    switch result {
+//                    case .success(let response):
+//                        debugPrint(response)
+//                    case .failure(let error):
+//                        debugPrint(error)
+//                    }
+//                    return (data, response)
+//                })
+//                .mapError { (error) -> Error in
+//                    print(">>>>> Error: \(String(describing: error))")
+//                    return error
+//                }
+//            .eraseToAnyPublisher()
+//            .asFuture()
+//        } catch {
+//            debugPrint(">>>>> Error: \(String(describing: error))")
+//            throw error
+//        }
     }
     
     func cansel() {
         self.task?.cancel()
     }
     
-    private func buildRequest(from route: EndPoint) throws -> URLRequest {
+    private func buildRequest(from route: EndPoint) -> Result<URLRequest, Error> {
         
         var request = URLRequest(url: route.baseURL.appendingPathComponent(route.path),
                                  cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
@@ -62,9 +106,9 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
                                             urlParameters: urlParameters,
                                             request: &request)
             }
-            return request
+            return .success(request)
         } catch {
-            throw error
+            return .failure(error)
         }
     }
 
