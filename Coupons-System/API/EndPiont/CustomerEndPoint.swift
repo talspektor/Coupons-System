@@ -66,6 +66,4 @@ enum CustomerEndPoint: EndPointType {
     var headers: HTTPHeaders? {
         return ["token": APIConstants.token]
     }
-    
-    
 }

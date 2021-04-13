@@ -8,30 +8,6 @@
 import Foundation
 import Combine
 
-//extension Publisher {
-//    func asFuture() -> Future<Output, Failure> {
-//        return Future { promise in
-//            var ticket: AnyCancellable? = nil
-//            ticket = self.sink(
-//                receiveCompletion: {
-//                    ticket?.cancel()
-//                    ticket = nil
-//                    switch $0 {
-//                    case .failure(let error):
-//                        promise(.failure(error))
-//                    case .finished:
-//                        promise(.success(Output($0)))
-//                    }
-//            },
-//                receiveValue: {
-//                    ticket?.cancel()
-//                    ticket = nil
-//                    promise(.success($0))
-//            })
-//        }
-//    }
-//}
-
 struct Response<T> { // 1
     let value: T
     let response: URLResponse
@@ -42,22 +18,19 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
     private var task: URLSessionTask?
     private var cancelables = Set<AnyCancellable>()
     
-    func request<T: Decodable>(_ route: EndPoint, type: T.Type) throws -> URLSession.DataTaskPublisher {
-//        do {
-            let request = self.buildRequest(from: route)
+    func request<T: Decodable>(_ route: EndPoint, type: T.Type) -> AnyPublisher<T, Error> {
+        let request = self.buildRequest(from: route)
         switch request {
         case .success(let urlRequest):
+            debugPrint(">>>>> URL: \(String(describing: urlRequest.url))")
+            debugPrint(">>>>> REQUEST BODY \(String(describing: urlRequest.httpBody))")
+            debugPrint(">>>>> REQUEST Method \(String(describing: urlRequest.httpMethod))")
+            debugPrint(">>>>> REQUEST HEADERS \(String(describing: urlRequest.allHTTPHeaderFields))")
+            
             return URLSession.DataTaskPublisher(request: urlRequest, session: .shared)
-        case .failure(let error):
-            throw error
-        }
-//            return URLSession.DataTaskPublisher(request: request, session: .shared)
-//                .map({ (data, response) -> (Data, URLResponse) in
-//                    print(">>>>> URL: \(String(describing: response.url))")
-//                    print(">>>>> REQUEST BODY \(String(describing: request.httpBody))")
-//                    print(">>>>> REQUEST Method \(String(describing: request.httpMethod))")
-//                    print(">>>>> REQUEST HEADERS \(String(describing: request.allHTTPHeaderFields))")
-//                    let networkResponseItem = NetworkResponseItem(data: data, response: response, error: nil)
+//                .tryMap {
+//                    print(">>>>> URL: \(String(describing: $0.response.url))")
+//                    let networkResponseItem = NetworkResponseItem(data: $0.data, response: $0.response, error: nil)
 //                    let result = ResponseHandler.handleWithDecoding(T.self, networkResponseItem)
 //                    switch result {
 //                    case .success(let response):
@@ -65,18 +38,24 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
 //                    case .failure(let error):
 //                        debugPrint(error)
 //                    }
-//                    return (data, response)
-//                })
-//                .mapError { (error) -> Error in
-//                    print(">>>>> Error: \(String(describing: error))")
-//                    return error
-//                }
-//            .eraseToAnyPublisher()
-//            .asFuture()
-//        } catch {
-//            debugPrint(">>>>> Error: \(String(describing: error))")
-//            throw error
-//        }
+//                    return $0.data
+//            }
+//            .map({ data, response in
+//                let networkResponseItem = NetworkResponseItem(data: data, response: response, error: nil)
+//                ResponseHandler.handleWithDecoding(T.self, networkResponseItem)
+//                return data
+                //            })
+                .map(\.data)
+                .decode(type: T.self, decoder: JSONDecoder())
+                .mapError { error in
+                    return error
+            }
+                //            .receive(on: queue)
+                //            .retry(retries)
+            .eraseToAnyPublisher()
+        case .failure(let error):
+            return AnyPublisher(Fail(error: error))
+        }
     }
     
     func cansel() {

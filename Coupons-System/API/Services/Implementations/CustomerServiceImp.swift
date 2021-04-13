@@ -6,56 +6,33 @@
 //
 
 import Foundation
+import Combine
 
 enum CustomerServiceImp: CustomerService {
         
     static var client: CustomerClient { CustomerClient() }
 
-//    static func getAllCoupons(completion: @escaping (Result<[Coupon], Error>) -> Void) {
-//        client.router.request(.getCoupons) { responseItem in
-//            ResponseHandler.handleWithDecoding([Coupon].self, responseItem) { (result) in
-//                completion(result)
-//            }
-//        }
-//    }
-//    
-//    static func getCustomerCoupons(completion: @escaping (Result<[Coupon], Error>) -> Void) {
-//        client.router.request(.getCustomerCoupons) { responseItem in
-//            ResponseHandler.handleWithDecoding([Coupon].self, responseItem) { (result) in
-//                completion(result)
-//            }
-//        }
-//    }
-//    
-//    static func purchaseCoupon(id: Int, completion: @escaping (Result<Coupon, Error>) -> Void) {
-//        client.router.request(.purchaseCoupon(id)) { responseItem in
-//            ResponseHandler.handleWithDecoding(Coupon.self, responseItem) { (result) in
-//                completion(result)
-//            }
-//        }
-//    }
-//    
-//    static func getCoupons(categoty: Category, completion: @escaping (Result<[Coupon], Error>) -> Void) {
-//        client.router.request(.getCouponsByCategury(categoty)) { responseItem in
-//            ResponseHandler.handleWithDecoding([Coupon].self, responseItem) { (result) in
-//                completion(result)
-//            }
-//        }
-//    }
-//    
-//    static func getCoupons(maxPrice: Double, completion: @escaping (Result<[Coupon], Error>) -> Void) {
-//        client.router.request(.getCouponsPriceLessThen(maxPrice)) { responseItem in
-//            ResponseHandler.handleWithDecoding([Coupon].self, responseItem) { (result) in
-//                completion(result)
-//            }
-//        }
-//    }
-//    
-//    static func getCustomer(completion: @escaping (Result<Customer, Error>) -> Void) {
-//        client.router.request(.getCustoemr) { responseItem in
-//            ResponseHandler.handleWithDecoding(Customer.self, responseItem) { (result) in
-//                completion(result)
-//            }
-//        }
-//    }
+    static func getAllCoupons() -> AnyPublisher<[Coupon], Error> {
+        client.router.request(.getCoupons, type: [Coupon].self)
+    }
+    
+    static func getCustomerCoupons() -> AnyPublisher<[Coupon], Error> {
+        client.router.request(.getCustomerCoupons, type: [Coupon].self)
+    }
+    
+    static func purchaseCoupon(id: Int) -> AnyPublisher<Coupon, Error> {
+        client.router.request(.purchaseCoupon(id), type: Coupon.self)
+    }
+    
+    static func getCoupons(categoty: Category) -> AnyPublisher<[Coupon],Error> {
+        client.router.request(.getCoupons, type: [Coupon].self)
+    }
+    
+    static func getCoupons(maxPrice: Double) -> AnyPublisher<[Coupon], Error> {
+        client.router.request(.getCouponsPriceLessThen(maxPrice), type: [Coupon].self)
+    }
+    
+    static func getCustomer() -> AnyPublisher<Customer, Error> {
+        client.router.request(.getCustoemr, type: Customer.self)
+    }
 }

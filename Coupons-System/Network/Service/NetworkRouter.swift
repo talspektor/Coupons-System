@@ -16,6 +16,6 @@ struct NetworkResponseItem {
 typealias NetworkRouterCompletion = (_ responseItem: NetworkResponseItem) -> Void
 protocol NetworkRouter: class {
     associatedtype EndPoint: EndPointType
-    func request<T: Decodable>(_ route: EndPoint, type: T.Type) throws -> URLSession.DataTaskPublisher
+    func request<T: Decodable>(_ route: EndPoint, type: T.Type) throws -> AnyPublisher<T, Error>
     func cansel()
 }
