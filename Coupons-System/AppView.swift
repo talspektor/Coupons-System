@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct AppView: View {
-    @EnvironmentObject var user: CustomerObservable
+    @EnvironmentObject var user: AppObservable
     
     var body: some View {
+        NavigationView {
+//            if user.isLoggedIn {
+//                HomeView()
+//            } else {
+                LoginView()
+//            }
+        }.navigationBarTitle("Coupon System")
 //        if user.useMockData {
-            HomeView()
+//            HomeView()
 //        } else {
 //            if user.isLoggedIn {
 //                HomeView()
@@ -24,7 +31,8 @@ struct AppView: View {
 }
 
 struct AppView_Previews: PreviewProvider {
+    static var user = AppObservable()
     static var previews: some View {
-        AppView()
+        AppView().environmentObject(user)
     }
 }

@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct LoginView: View {
-    @EnvironmentObject var user: CustomerObservable
+    @ObservedObject var app = AppObservable()
     
-    @State private var email: String = ""
-    @State private var password: String = ""
+//    @State private var email: String = ""
+//    @State private var password: String = ""
     
     private var types: [UserType] = [.admin, .company, .customer]
+    @ObservedObject private var viewModel = LoginViewModel()
     
     let verticalPaddingForFrom = 40.0
     var selection: String?
@@ -36,7 +37,7 @@ struct LoginView: View {
                         Image(systemName: "person")
                             .foregroundColor(.secondary)
                         
-                        TextField("Enter your email", text: $email)
+                        TextField("Enter your email", text: $viewModel.email)
                             .foregroundColor(.black)
                     }
                     .padding()
@@ -47,7 +48,7 @@ struct LoginView: View {
                         Image(systemName: "key")
                             .foregroundColor(.secondary)
                         
-                        SecureField("Enter password", text: $password)
+                        SecureField("Enter password", text: $viewModel.password)
                             .foregroundColor(.black)
                     }
                     .padding()
@@ -60,20 +61,20 @@ struct LoginView: View {
                             
                         HStack {
                             Button("\(types[0].rawValue)") {
-                                self.user.selectedType = self.types[0]
+                                self.viewModel.app.selectedType = self.types[0]
                             }.buttonStyle(MyButtonStyle())
 
                             Button("\(types[1].rawValue)") {
-                                self.user.selectedType = self.types[1]
+                                self.viewModel.app.selectedType = self.types[1]
                             }.buttonStyle(MyButtonStyle())
 
                             Button("\(types[2].rawValue)") {
-                                self.user.selectedType = self.types[2]
+                                self.viewModel.app.selectedType = self.types[2]
                             }.buttonStyle(MyButtonStyle())
 
                         }.padding(4)
                         HStack {
-                            Text("UserType: \(user.selectedType.rawValue)")
+                            Text("UserType: \(self.app.selectedType.rawValue)")
                                 .multilineTextAlignment(.center)
                                 .padding(4)
                         }
@@ -83,25 +84,10 @@ struct LoginView: View {
                     .cornerRadius(10)
                     .padding(4)
 
-                    NavigationLink(destination: HomeView(), isActive: $user.isLoggedIn) {
+                    NavigationLink(destination: HomeView(), isActive: $app.isLoggedIn) {
                         Button(action: {
-                            //if success navigate to home screen
-                            guard !self.email.isEmpty && !self.password.isEmpty else { return }
                             //Call service loin
-//                            Repository.shared.login(withEmail: self.email, andPassword: self.password, forUser: self.user.selectedType) { result in
-//                                switch result {
-//                                case .success:
-//                                    DispatchQueue.main.async {
-////                                        self.user.isLoggedIn = isLoggedin
-//                                    }
-//                                case .failure(let error):
-//                                    print(error)
-//                                    // for testing
-//                                    DispatchQueue.main.async {
-//                                        self.user.isLoggedIn = true
-//                                    }
-//                                }
-//                            }
+                            self.viewModel.login(type: self.app.selectedType, email: self.viewModel.email, password: self.viewModel.password)
                         }, label: {
                             Text("Login")
                                 .padding()

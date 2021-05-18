@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		363ED6B2261C857300E93588 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363ED6B1261C857300E93588 /* APIConstants.swift */; };
+		3640A35E26314D5900A2F5E8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3640A35D26314D5900A2F5E8 /* LoginViewModel.swift */; };
 		36437AC7261D71CD002294AB /* ResponseErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36437AC6261D71CD002294AB /* ResponseErrorModel.swift */; };
 		36437AC9261D7770002294AB /* LoginResponseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36437AC8261D7770002294AB /* LoginResponseItem.swift */; };
 		368DCDDE261B057400229381 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368DCDDD261B057400229381 /* AppDelegate.swift */; };
@@ -109,6 +110,7 @@
 
 /* Begin PBXFileReference section */
 		363ED6B1261C857300E93588 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		3640A35D26314D5900A2F5E8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		36437AC6261D71CD002294AB /* ResponseErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseErrorModel.swift; sourceTree = "<group>"; };
 		36437AC8261D7770002294AB /* LoginResponseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseItem.swift; sourceTree = "<group>"; };
 		368DCDDA261B057400229381 /* Coupons-System.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coupons-System.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -636,6 +638,7 @@
 			isa = PBXGroup;
 			children = (
 				368DCE9B261B060700229381 /* LoginView.swift */,
+				3640A35D26314D5900A2F5E8 /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -826,6 +829,7 @@
 				368DCEA0261B060700229381 /* CustomerItemView.swift in Sources */,
 				368DCEA1261B060700229381 /* CompanyItemView.swift in Sources */,
 				368DCE1E261B059F00229381 /* ResponseHandler.swift in Sources */,
+				3640A35E26314D5900A2F5E8 /* LoginViewModel.swift in Sources */,
 				368DCEA9261B060700229381 /* ComapnyHameView.swift in Sources */,
 				368DCE27261B059F00229381 /* NetworkRouter.swift in Sources */,
 				368DCDE0261B057400229381 /* SceneDelegate.swift in Sources */,

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AdminHomeView: View {
-    @EnvironmentObject var app: CustomerObservable
+    @EnvironmentObject var app: AppObservable
     
     @ObservedObject var viewModel = AdminHomeViewModel()
     

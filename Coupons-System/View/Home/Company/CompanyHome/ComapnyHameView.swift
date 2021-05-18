@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ComapnyHameView: View {
-    @EnvironmentObject var app: CustomerObservable
+    @EnvironmentObject var app: AppObservable
     
     @ObservedObject var viewModel = CompanyHomeViewModel()
     @State private var isPresent = false

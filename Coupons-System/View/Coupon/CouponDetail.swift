@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CouponDetail: View {
-    @EnvironmentObject var orderCoupon: CustomerObservable
+    @EnvironmentObject var orderCoupon: AppObservable
     
     private let isForOrder: Bool
     private let coupon: Coupon
@@ -54,7 +54,7 @@ struct CouponDetail: View {
 }
 
 struct CouponDetail_Previews: PreviewProvider {
-    static let orderCouopon = CustomerObservable()
+    static let orderCouopon = AppObservable()
     static var previews: some View {
         CouponDetail(isForOrder: true, coupon:  mockFoodCoupond[0]).environmentObject(orderCouopon)
     }

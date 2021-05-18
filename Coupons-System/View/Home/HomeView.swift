@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @EnvironmentObject var user: CustomerObservable
+    @EnvironmentObject var user: AppObservable
     var body: some View {
         NavigationView {
 //            switch user.selectedType {

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MockData {
-    @EnvironmentObject var orderCoupon: CustomerObservable
+    @EnvironmentObject var orderCoupon: AppObservable
     
     static let shared = MockData()
     

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CheckoutView: View {
-    @EnvironmentObject var order: CustomerObservable
+    @EnvironmentObject var order: AppObservable
     static let paymentTypes = ["Credit", "PayPal", "Bit"]
     @State private var pamenType = 0
     
@@ -35,7 +35,7 @@ struct CheckoutView: View {
 }
 
 struct CheckoutView_Previews: PreviewProvider {
-    static let order = CustomerObservable()
+    static let order = AppObservable()
     static var previews: some View {
         CheckoutView().environmentObject(order)
     }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OrderView: View {
-    @EnvironmentObject var orderCoupon: CustomerObservable
+    @EnvironmentObject var orderCoupon: AppObservable
     
     var body: some View {
         NavigationView {
@@ -37,7 +37,7 @@ struct OrderView: View {
 }
 
 struct OrderView_Previews: PreviewProvider {
-    static let orderCoupon = CustomerObservable()
+    static let orderCoupon = AppObservable()
     static var previews: some View {
         OrderView().environmentObject(orderCoupon)
     }

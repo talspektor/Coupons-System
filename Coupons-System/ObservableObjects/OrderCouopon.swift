@@ -11,7 +11,7 @@ enum UserType: String {
     case customer = "CUSTOMER"
     case company = "COMPANY"
 }
-class CustomerObservable: ObservableObject {
+class AppObservable: ObservableObject {
 
     @Published var coupons: [CategoryCoupons]?
     @Published var myCouopns: [CategoryCoupons]?
